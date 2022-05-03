@@ -1,4 +1,5 @@
-function R = cholesky(A, n)
+function R = cholesky(A)
+	n = rows(A);  % safe, since we are assuming that A is symmetric, thus it is a square matrix
 	R = zeros(n);
 
 	for i = 1 : n
