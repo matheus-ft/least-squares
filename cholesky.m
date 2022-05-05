@@ -27,10 +27,7 @@ function R = cholesky(A)
 				endfor
 				R(i, j) = ( A(i, j) - summation ) / R(i, i);
 
-			% bellow diagonal
-			else
-				R(i, j) = 0;
-			endif
+			% bellow diagonal is already filled with zeros
 
 		endfor
 	endfor
