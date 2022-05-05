@@ -1,11 +1,11 @@
 function x = linear_sys(A, b)
     R = cholesky(A);
     % A = RR' and Ax = b <-> RR'x = b <-> Ry = b and R'x = y
-    y = backward(R, b);
-    x = forward(R', y);
+    y = backward_subs(R, b);
+    x = forward_subs(R', y);
 endfunction
 
-function x = backward(A, b)
+function x = backward_subs(A, b)
     n = rows(A);
     x = zeros(n, 1);
     for i = n : -1 : 1  % for i in range(n, 0, -1)
@@ -17,7 +17,7 @@ function x = backward(A, b)
     endfor
 endfunction
 
-function x = forward(A, b)
+function x = forward_subs(A, b)
     n = rows(A);
     x = zeros(n, 1);
     for i = 1 : n
