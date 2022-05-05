@@ -9,23 +9,23 @@ function R = cholesky(A)
 
 			% fill the diagonal of the Cholesky factor
 			if (i == j)
-				sum = 0;
+				summation = 0;
 				for k = 1 : i-1
-					sum += R(k, i) ^ 2;
+					summation += R(k, i) ^ 2;
 				endfor
 				% checks if the matrix A is positive definite
-				if (sum >= A(i, i))
+				if (summation >= A(i, i))
 					error("A is not positive definite");
 				endif
-				R(i, i) = sqrt( A(i, i) - sum );
+				R(i, i) = sqrt( A(i, i) - summation );
 
 			% fill upper half of the Cholesky factor
 			elseif (j > i)
-				sum = 0;
+				summation = 0;
 				for k = 1 : i-1
-					sum += R(k, i) * R(k, j);
+					summation += R(k, i) * R(k, j);
 				endfor
-				R(i, j) = ( A(i, j) - sum ) / R(i, i);
+				R(i, j) = ( A(i, j) - summation ) / R(i, i);
 
 			% bellow diagonal
 			else
