@@ -9,7 +9,8 @@ function main(method, file)
         disp("Solução: \nx = "), disp(x), disp("\n");
         printf("Resíduo: ||Ax - b|| = %f \n\n", r);
 
-        plot(A*x, "-;Least Squares Solution;", "linewidth", 2, b, ".;Data;");
+        plot(A*x, "-;Solução de Quadrados Mínimos;", "linewidth", 2, b, ".;Dados;");
+        axis("tight")
 
     elseif (strcmp(method, "cholesky") || strcmp(method, "chol"))
         [A, b] = grab_data(file);
@@ -20,7 +21,8 @@ function main(method, file)
         disp("Solução: \nx = "), disp(x), disp("\n");
         printf("Resíduo: ||Ax - b|| = %f \n\n", r);
 
-        plot(A*x, "-;Least Squares Solution;", "linewidth", 2, b, ".;Data;");
+        plot(A*x, "-;Solução de Quadrados Mínimos;", "linewidth", 2, b, ".;Dados;");
+        axis("tight")
 
     else 
         disp("\nEste método não é válido!\n");
