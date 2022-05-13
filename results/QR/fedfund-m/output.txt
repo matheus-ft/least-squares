@@ -1,0 +1,21 @@
+Ajustando os dados de fedfund-m.dat por um polinômio de grau 10.
+Resolvemos o problema de quadrados mínimos utilizando a decomposição QR diretamente na matriz do sistema.
+
+Número de condição: k(A) = 5.0216e+29 
+
+Solução: 
+x = 
+   7.2493e-01
+   1.0308e-01
+   7.2730e-04
+  -1.0779e-04
+   2.1208e-06
+  -1.9334e-08
+   9.8427e-11
+  -2.9624e-13
+   5.2387e-16
+  -5.0341e-19
+   2.0296e-22
+
+
+Resíduo: ||Ax - b|| = 45.039904
