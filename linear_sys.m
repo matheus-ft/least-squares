@@ -1,13 +1,14 @@
 function x = linear_sys(A, b)
-    # A is symmetric, thus, we try to find its Cholesky factor R
-    # If A = RR', since Ax = b -> RR'x = b
-    # Therefore, we want x: Ry = b and R'x = y
+    % A is symmetric, thus, we try to find its Cholesky factor R
+    % If A = RR', since Ax = b -> RR'x = b
+    % Therefore, we want x: Ry = b and R'x = y
     R = cholesky(A);
     y = backward_subs(R, b);
     x = forward_subs(R', y);
 endfunction
 
 function x = forward_subs(A, b)
+    % solves a lower triangular linear system
     n = rows(A);
     x = zeros(n, 1);
     for i = 1 : n
