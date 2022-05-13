@@ -5,9 +5,9 @@ function main(method, file)
         [x, r] = LS_QR(A, b);
 
         printf("\nAjustando os dados de %s por um polinômio de grau 10.\nResolvemos o problema de quadrados mínimos utilizando a decomposição QR diretamente na matriz do sistema.\n\n", file);
-        printf("Numero de condicao: k(A) = %d \n\n", cond(A));
-        disp("Solucao: \nx = "), disp(x), disp("\n");
-        printf("Residuo: ||Ax-b|| = %f \n", r);
+        printf("Número de condição: k(A) = %d \n\n", cond(A));
+        disp("Solução: \nx = "), disp(x), disp("\n");
+        printf("Resíduo: ||Ax-b|| = %f \n", r);
 
         plot(A*x, "-;Least Squares Solution;", "linewidth", 2, b, ".;Data;");
 
@@ -16,9 +16,9 @@ function main(method, file)
         [x, r] = LS_cholesky(A, b);
 
         printf("\nAjustando os dados de %s por um polinômio de grau 10.\nResolvemos o problema de quadrados mínimos utilizando decomposição de Cholesky para resolver as equações normais.\n\n", file);
-        printf("Numero de condicao: k(A) = %d \n\n", cond(A));
-        disp("Solucao: \nx = "), disp(x), disp("\n");
-        printf("Residuo: ||Ax-b|| = %f \n", r);
+        printf("Número de condição: k(A) = %d \n\n", cond(A));
+        disp("Solução: \nx = "), disp(x), disp("\n");
+        printf("Resíduo: ||Ax-b|| = %f \n", r);
 
         plot(A*x, "-;Least Squares Solution;", "linewidth", 2, b, ".;Data;");
 
