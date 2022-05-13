@@ -1,6 +1,6 @@
 function main(method, file)
     method = tolower(method);
-    if (strcmp(method, "QR"))
+    if (strcmp(method, "qr"))  % opposite return value of the <string.h> function
         [A, b] = grab_data(file);
         [x, r] = LS_QR(A, b);
 
@@ -23,6 +23,6 @@ function main(method, file)
         plot(A*x, "-;Least Squares Solution;", "linewidth", 2, b, ".;Data;");
 
     else 
-        disp("Este metodo nao e valido");
+        disp("\nEste método não é válido!\n");
     endif
 endfunction
