@@ -1,0 +1,23 @@
+Ajustando os dados de fedfund-b.dat por um polinômio de grau 10.
+Resolvemos o problema de quadrados mínimos utilizando decomposição de Cholesky para resolver as equações normais.
+
+Número de condição: k(A) = 3.61833e+42 
+
+Solução: 
+x = 
+   5.5318e+40
+  -9.5822e+40
+   1.2373e+41
+  -1.4644e+41
+   1.6611e+41
+  -1.8372e+41
+   1.9984e+41
+  -2.1480e+41
+   2.2885e+41
+  -2.4218e+41
+   2.5675e+41
+
+
+Resíduo: ||Ax - b|| = 146468702962722921518674579801237210157895014263615969971105745442919230611157680128.000000 
+
+warning: opengl_renderer: data values greater than float capacity.  (1) Scale data, or (2) Use gnuplot
