@@ -1,36 +1,21 @@
 function R = cholesky(A)
-	% A is a symmetric, thus square, matrix
-
-	n = rows(A);
-	R = zeros(n);
-
-	for i = 1 : n
-		for j = 1 : n
-
-			% fill the diagonal of the Cholesky factor
-			if (i == j)
-				summation = 0;
-				for k = 1 : i-1
-					summation += R(k, i) ^ 2;
-				endfor
-				% checks if the matrix A is positive definite
-				if (summation >= A(i, i))
-					error("A is not positive definite");
-				endif
-				R(i, i) = sqrt( A(i, i) - summation );
-
-			% fill upper half of the Cholesky factor
-			elseif (j > i)
-				summation = 0;
-				for k = 1 : i-1
-					summation += R(k, i) * R(k, j);
-				endfor
-				R(i, j) = ( A(i, j) - summation ) / R(i, i);
-
-			% bellow diagonal is already filled with zeros
-			endif
-
-		endfor
-	endfor
-
-endfunction
+    n = rows(A);
+    R = zeros(n);
+    for i = 1:n
+        for j = 1:i-1
+            A(i,i) = A(i,i)-A(j,i)*A(j,i);
+        end
+        if(A(i,i) <= 0)
+            message = 'ERROR: matrix not positive definite';
+            error(message);
+            break
+        else
+            R(i,i) = sqrt(A(i,i));
+        end
+    for j = i+1:n
+        for k = 1:i-1
+            A(i,j) = A(i,j) - A(k,i)*A(k,j);
+        end
+        R(i,j) = A(i,j)/A(i,i);
+    end
+end
